@@ -36,7 +36,7 @@
                             </li>
 
                             <div class="nav-item">
-                                <a href="#login" class="btn custom-btn custom-border-btn smoothscroll">Login</a>
+                                <a href="{{ url('/login') }}" class="btn custom-btn custom-border-btn smoothscroll">Login</a>
                             </div>
 
                         </ul>

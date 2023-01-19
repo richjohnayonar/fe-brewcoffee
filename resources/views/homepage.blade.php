@@ -1,6 +1,6 @@
 @extends('homepage.layouts.app')
  
-@section('title', 'Homepage - Brew Break')
+@section('title', 'Brew Break Coffee | Butuan City')
  
 @section('content')
 
