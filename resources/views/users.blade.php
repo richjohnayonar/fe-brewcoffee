@@ -12,7 +12,7 @@
                     {{-- {{ __("You're logged in!") }} --}}
 
 
-                    <h1>Hi there, Thank you for logging in {{ Auth::user()->name }}! </h1>
+                    
 
 
                 </div>

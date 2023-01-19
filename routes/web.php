@@ -18,9 +18,20 @@ Route::get('/', function () {
     return view('homepage');
 });
 
+
+
+// USERS 01
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+// USERS 02
+Route::get('/users', function () {
+    return view('users');
+})->middleware(['auth', 'verified'])->name('users');
+
+
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
