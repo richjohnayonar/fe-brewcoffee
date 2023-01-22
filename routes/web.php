@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,15 +21,38 @@ Route::get('/', function () {
 
 
 
-// USERS 01
+// Dashboard
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-// USERS 02
-Route::get('/users', function () {
-    return view('users');
-})->middleware(['auth', 'verified'])->name('users');
+// USERS 
+Route::get('/users', [UserController::class, 'index'])
+    ->middleware(['auth', 'verified'])
+    ->name('users');
+
+Route::get('/users/add', [UserController::class, 'form'])
+    ->middleware(['auth', 'verified']);
+
+Route::post('/users/add', [UserController::class, 'store'])
+    ->middleware(['auth', 'verified']);
+
+Route::get('/users/update/{id}', [UserController::class, 'show'])
+    ->middleware(['auth', 'verified']);
+
+Route::post('/users/update/{id}', [UserController::class, 'update'])
+    ->middleware(['auth', 'verified']);
+
+Route::get('/users/delete/{id}', [UserController::class, 'delete'])
+    ->middleware(['auth', 'verified']);   
+
+
+
+
+
+
+
+
 
 
 
