@@ -46,6 +46,26 @@ Route::post('/users/update/{id}', [UserController::class, 'update'])
 Route::get('/users/delete/{id}', [UserController::class, 'delete'])
     ->middleware(['auth', 'verified']);   
 
+    Route::get('/sliders', [SliderController::class, 'index'])
+    ->middleware(['auth', 'verified'])
+    ->name('sliders');
+Route::get('/sliders/create', [SliderController::class, 'create'])
+    ->middleware(['auth', 'verified'])
+    ->name('create');    
+Route::post('/sliders/create', [SliderController::class, 'store'])
+    ->middleware(['auth', 'verified'])
+    ->name('create');
+Route::get('/sliders/{slider}/edit', [SliderController::class, 'edit'])
+    ->middleware(['auth', 'verified'])
+    ->name('edit');
+Route::put('/sliders/{slider}', [SliderController::class, 'update'])
+    ->middleware(['auth', 'verified'])
+    ->name('update');
+Route::get('/sliders/{slider}/delete', [SliderController::class, 'destroy'])
+    ->middleware(['auth', 'verified'])
+    ->name('destroy');
+
+
 
 
 
