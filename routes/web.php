@@ -2,7 +2,10 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\Admin\SliderController;
+use App\Http\Controllers\Admin\CarouselController;
 use Illuminate\Support\Facades\Route;
+use App\Models\Slider;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +19,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('homepage');
+    $sliders = Slider::all();
+    return view('homepage',['sliders' => $sliders]);
 });
 
 
@@ -64,7 +68,6 @@ Route::put('/sliders/{slider}', [SliderController::class, 'update'])
 Route::get('/sliders/{slider}/delete', [SliderController::class, 'destroy'])
     ->middleware(['auth', 'verified'])
     ->name('destroy');
-
 
 
 

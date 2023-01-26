@@ -29,24 +29,24 @@
                     <table class="table-auto w-full text-center">
                         <thead>
                             <tr>
-                            <th class = "border-solid border-2 border-light-blue-500 p-1 bg-red-300">ID</th>
+                            <!-- <th class = "border-solid border-2 border-light-blue-500 p-1 bg-red-300">ID</th> -->
                             <th class = "border-solid border-2 border-light-blue-500 p-1 bg-red-300">Title</th>
                             <th class = "border-solid border-2 border-light-blue-500 p-1 bg-red-300">Description</th>
                             <th class = "border-solid border-2 border-light-blue-500 p-1 bg-red-300">Image</th>
-                            <th class = "border-solid border-2 border-light-blue-500 p-1 bg-red-300">Status</th>
+                            <!-- <th class = "border-solid border-2 border-light-blue-500 p-1 bg-red-300">Status</th> -->
                             <th class = "border-solid border-2 border-light-blue-500 p-1 bg-red-300">Action</th>
                             </tr>
                             </thead>
                             <tbody>
                         @foreach ($sliders as $slider)
                         <tr class="mb-2">
-                        <td class="p-1">{{$slider->id}}</td>
+                        <!-- <td class="p-1">{{$slider->id}}</td> -->
                             <td class="p-1">{{$slider->title}}</td>
                             <td class="p-1">{{$slider->description}}</td>
                             <td class="p-1">
                             <img src="{{ asset($slider->image)}}" class="h-32 w-full object-cover" alt="Slider">
                             </td>
-                            <td class="p-1">{{$slider->status == '0' ? 'Visible':'Hidden' }}</td>
+                            <!-- <td class="p-1">{{$slider->status == '0' ? 'Visible':'Hidden' }}</td> -->
                             <td class="p-1">
                             <a href = "{{ url('/sliders/'.$slider->id.'/edit')}}" class = "btn btn-success bg-green-500 text-white">Edit</a>
                             <a href = "{{ url('/sliders/'.$slider->id.'/delete')}}" 
